@@ -1,0 +1,143 @@
+/* Fondo con gradiente y tipografía más moderna */
+body {
+font-family: 'Poppins', sans-serif;
+background: linear-gradient(135deg, #4f9cff, #6ad79a);
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+color: #fff;
+}
+
+/* Encabezado */
+.header {
+width: 100%;
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 40px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+border-bottom: 1px solid rgba(255,255,255,0.3);
+position: fixed;
+top: 0;
+z-index: 10;
+flex-shrink: 0;
+box-sizing: border-box;
+}
+
+
+
+.logo {
+font-size: 24px;
+font-weight: 700;
+text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+
+.nav {
+display: flex;
+gap: 20px;
+}
+
+
+.nav-item {
+text-decoration: none;
+color: #fff;
+font-weight: 600;
+transition: color 0.3s, transform 0.2s;
+}
+
+
+.nav-item:hover {
+color: #ffd700;
+transform: scale(1.1);
+}
+
+/* Tarjeta del contenedor */
+.container {
+background: rgba(255, 255, 255, 0.15);
+padding: 25px;
+border-radius: 20px;
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+width: 350px;
+max-width: 90%;
+text-align: center;
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border: 1px solid rgba(255,255,255,0.3);
+animation: fadeIn 1s ease-out;
+margin: 120px auto 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+
+/* Título */
+h1 {
+font-size: 26px;
+margin-bottom: 18px;
+font-weight: 600;
+text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+
+/* Botones más modernos */
+button {
+width: 100%;
+padding: 12px;
+margin: 12px 0;
+border: none;
+border-radius: 30px;
+background: #ffffff;
+color: #333;
+font-size: 16px;
+font-weight: 600;
+cursor: pointer;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+transition: transform 0.2s, background 0.3s;
+}
+
+
+button:hover {
+background: #f0f0f0;
+transform: scale(1.05);
+}
+
+
+button:active {
+transform: scale(0.97);
+}
+
+
+/* Datos mostrados */
+.dato {
+margin-top: 14px;
+font-size: 20px;
+font-weight: 700;
+padding: 10px;
+background: rgba(255, 255, 255, 0.2);
+border-radius: 12px;
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+transition: opacity 0.3s ease;
+}
+
+
+/* Animación de entrada */
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}

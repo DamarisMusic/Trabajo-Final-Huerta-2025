@@ -8,6 +8,33 @@
     <title>Document</title>
 </head>
 <body>
+    <header class="header">
+    <h2 class="logo">Página Huerta</h2>
+    <nav class="nav">
+    <a href="#" class="nav-item" id="navInicio">Inicio</a>
+    <a href="#" class="nav-item" id="navSensores">Sensores</a>
+    <a href="#" class="nav-item" id="navAjustes">Ajustes</a>
+    </nav>
+    </header>
+
+    <div class="container">
+<h1>Datos de Sensores</h1>
+
+
+<button id="btnHumedadSuelo">Humedad del Suelo</button>
+<div id="humedadSuelo" class="dato"></div>
+
+
+<button id="btnHumedadAire">Humedad del Aire</button>
+<div id="humedadAire" class="dato"></div>
+
+
+<button id="btnTempAire">Temperatura del Aire</button>
+<div id="tempAire" class="dato"></div>
+</div>
+
+
+<script type="module" src="app.js"></script>
 
 </body>
 <script src="huerta.js"></script>

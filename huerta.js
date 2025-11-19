@@ -17,16 +17,46 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
+  const db = getDatabase();
 
-  let parrafo = document.querySelector("p");
 
-const refDatos = ref(db, "huerta");
+  // Botones
+  const btnHumedadSuelo = document.getElementById("btnHumedadSuelo");
+  const btnHumedadAire = document.getElementById("btnHumedadAire");
+  const btnTempAire = document.getElementById("btnTempAire");
 
-onValue(refDatos, (snapshot) => {
-    console.log(snapshot.val())
-    let huerta = snapshot.val()
-    parrafo.textContent = `La huerta tiene una temperatura en el suelo de ${huerta.tempSuelo}° y de humedad de ${huerta.humSuelo}`
-    
-   
-})
+
+  // Elementos donde se muestran los datos\const humedadSueloBox = document.getElementById("humedadSuelo");
+  const humedadAireBox = document.getElementById("humedadAire");
+  const tempAireBox = document.getElementById("tempAire");
+
+
+  // Funciones para obtener datos
+  function obtenerDato(rutaFirebase, elementoHTML, texto) {
+  const ruta = ref(db, rutaFirebase);
+  get(ruta).then((snapshot) => {
+  if (snapshot.exists()) {
+  elementoHTML.innerText = `${texto}: ${snapshot.val()}`;
+  } else {
+  elementoHTML.innerText = "No hay datos disponibles.";
+  }
+  });
+  }
+
+
+  // Eventos de los botones
+  btnHumedadSuelo.addEventListener("click", () => {
+  obtenerDato("sensores/humedad_suelo", humedadSueloBox, "Humedad del Suelo");
+  });
+
+
+  btnHumedadAire.addEventListener("click", () => {
+  obtenerDato("sensores/humedad_aire", humedadAireBox, "Humedad del Aire");
+  });
+
+
+  btnTempAire.addEventListener("click", () => {
+  obtenerDato("sensores/temperatura_aire", tempAireBox, "Temperatura del Aire");
+  });
+
+
