@@ -4,7 +4,6 @@ font-family: 'Poppins', sans-serif;
 background: linear-gradient(135deg, #4f9cff, #6ad79a);
 margin: 0;
 padding: 0;
-display: flex;
 justify-content: center;
 align-items: center;
 height: 100vh;
@@ -85,6 +84,8 @@ font-size: 26px;
 margin-bottom: 18px;
 font-weight: 600;
 text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+justify-content: center;
+text-align: center;
 }
 
 
